@@ -99,67 +99,6 @@
             flex-direction: column;
         }
 
-        #aiSupportChat {
-            display: none;
-            position: fixed;
-            bottom: 100px;
-            right: 24px;
-            width: 350px;
-            height: 500px;
-            background: #151518;
-            border: 1px solid rgba(159, 18, 57, 0.3);
-            border-radius: 20px;
-            z-index: 4000;
-            flex-direction: column;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            overflow: hidden;
-        }
-
-        #chatMessages {
-            flex: 1;
-            overflow-y: auto;
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .message {
-            max-width: 80%;
-            padding: 10px 14px;
-            border-radius: 14px;
-            font-size: 14px;
-            line-height: 1.4;
-        }
-
-        .message-ai {
-            align-self: flex-start;
-            background: rgba(255, 255, 255, 0.05);
-            color: #e2e8f0;
-            border-bottom-left-radius: 2px;
-        }
-
-        .message-user {
-            align-self: flex-end;
-            background: #9f1239;
-            color: white;
-            border-bottom-right-radius: 2px;
-        }
-
-        .typing-dot {
-            width: 6px;
-            height: 6px;
-            background: #9f1239;
-            border-radius: 50%;
-            display: inline-block;
-            animation: bounce 1.4s infinite ease-in-out;
-        }
-
-        @keyframes bounce {
-            0%, 80%, 100% { transform: scale(0); }
-            40% { transform: scale(1); }
-        }
-
         @keyframes pop {
             0% { transform: scale(1); }
             50% { transform: scale(1.3); }
@@ -436,37 +375,6 @@
         </div>
     </div>
 
-    <!-- Suporte de Chat IA Flutuante -->
-    <button onclick="toggleSupportChat()" id="chatBubble" class="fixed bottom-6 right-6 w-14 h-14 bg-rose-800 rounded-full text-white shadow-2xl flex items-center justify-center hover:scale-110 transition-all z-[3500]">
-        <i id="chatIcon" class="fas fa-comment-dots text-2xl"></i>
-    </button>
-
-    <div id="aiSupportChat">
-        <div class="p-4 bg-rose-900 flex items-center justify-between border-b border-white/10">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-robot text-white text-sm"></i>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold text-sm">Ultimate Support</h4>
-                    <span class="text-[10px] text-white opacity-60 flex items-center gap-1">
-                        <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> IA Assistente Online
-                    </span>
-                </div>
-            </div>
-            <button onclick="toggleSupportChat()" class="text-white opacity-60 hover:opacity-100"><i class="fas fa-times"></i></button>
-        </div>
-        <div id="chatMessages">
-            <div class="message message-ai">Olá! Eu sou o assistente virtual da Ultimate Models. Como posso ajudar-te hoje?</div>
-        </div>
-        <div class="p-4 border-t border-white/5 bg-black/20 flex items-center gap-2">
-            <input id="chatInput" type="text" placeholder="Escreve a tua dúvida..." class="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-rose-800 transition-all">
-            <button onclick="sendChatMessage()" class="w-10 h-10 bg-rose-800 rounded-xl flex items-center justify-center text-white hover:bg-rose-700 transition-all shadow-lg">
-                <i class="fas fa-paper-plane text-xs"></i>
-            </button>
-        </div>
-    </div>
-
     <!-- Vantagens -->
     <section id="vantagens" class="py-24 bg-[#0d0d10] text-white">
         <div class="max-w-7xl mx-auto px-6 text-center mb-16">
@@ -513,7 +421,7 @@
         </div>
     </footer>
 
-    <!-- Modal de Termos de Uso (Lista Complexa Adicionada) -->
+    <!-- Modal de Termos de Uso -->
     <div id="termsModal" class="modal">
         <div class="bg-[#151518] p-8 rounded-3xl border border-white/10 max-w-2xl w-full mx-4 relative max-h-[85vh] overflow-y-auto">
             <button onclick="closeModal('termsModal')" class="absolute top-4 right-4 text-white hover:text-gray-400"><i class="fas fa-times"></i></button>
@@ -521,7 +429,6 @@
             <h2 class="text-2xl font-bold text-white mb-6 border-b border-rose-900/30 pb-4">Termos de Uso e Condições</h2>
             
             <div class="space-y-6 text-white text-sm leading-relaxed">
-                <!-- Secção 1 -->
                 <div>
                     <h3 class="text-rose-500 font-bold uppercase tracking-wider mb-2">1. Licenciamento e Propriedade</h3>
                     <ul class="list-disc pl-5 space-y-2 opacity-80">
@@ -531,7 +438,6 @@
                     </ul>
                 </div>
 
-                <!-- Secção 2 -->
                 <div>
                     <h3 class="text-rose-500 font-bold uppercase tracking-wider mb-2">2. Processo de Encomenda e Pagamento</h3>
                     <ul class="list-disc pl-5 space-y-2 opacity-80">
@@ -541,7 +447,6 @@
                     </ul>
                 </div>
 
-                <!-- Secção 3 -->
                 <div>
                     <h3 class="text-rose-500 font-bold uppercase tracking-wider mb-2">3. Modificações e Suporte</h3>
                     <ul class="list-disc pl-5 space-y-2 opacity-80">
@@ -551,7 +456,6 @@
                     </ul>
                 </div>
 
-                <!-- Secção 4 -->
                 <div>
                     <h3 class="text-rose-500 font-bold uppercase tracking-wider mb-2">4. Política de Reembolso</h3>
                     <ul class="list-disc pl-5 space-y-2 opacity-80">
@@ -560,7 +464,6 @@
                     </ul>
                 </div>
 
-                <!-- Rodapé do Modal -->
                 <div class="mt-8 p-4 bg-rose-950/20 border border-rose-900/30 rounded-xl">
                     <p class="text-[12px] opacity-60 text-center italic">
                         Ao efetuar qualquer compra na nossa loja, declara estar de acordo com todos os pontos acima mencionados.
@@ -587,7 +490,6 @@
     </div>
 
     <script>
-        const apiKey = "";
         let cart = [];
 
         function addToCart(name, price) {
@@ -668,80 +570,6 @@
             icon.classList.add('text-green-500');
             setTimeout(() => { icon.classList.replace('fa-check', 'fa-copy'); icon.classList.remove('text-green-500'); }, 2000);
         }
-
-        function toggleSupportChat() {
-            const chat = document.getElementById('aiSupportChat');
-            const icon = document.getElementById('chatIcon');
-            const isVisible = chat.style.display === 'flex';
-            chat.style.display = isVisible ? 'none' : 'flex';
-            icon.className = isVisible ? 'fas fa-comment-dots text-2xl' : 'fas fa-chevron-down text-xl';
-        }
-
-        async function sendChatMessage() {
-            const input = document.getElementById('chatInput');
-            const message = input.value.trim();
-            if (!message) return;
-            appendMessage(message, 'user');
-            input.value = '';
-            const typingId = appendTypingIndicator();
-            try {
-                const aiResponse = await callGeminiAPI(message);
-                removeTypingIndicator(typingId);
-                appendMessage(aiResponse, 'ai');
-            } catch (error) {
-                removeTypingIndicator(typingId);
-                appendMessage("Desculpa, tive um problema ao processar. Tenta novamente ou chama-nos no Discord.", 'ai');
-            }
-        }
-
-        function appendMessage(text, side) {
-            const container = document.getElementById('chatMessages');
-            const msgDiv = document.createElement('div');
-            msgDiv.className = `message message-${side}`;
-            msgDiv.innerText = text;
-            container.appendChild(msgDiv);
-            container.scrollTop = container.scrollHeight;
-        }
-
-        function appendTypingIndicator() {
-            const container = document.getElementById('chatMessages');
-            const id = 'typing-' + Date.now();
-            const typingDiv = document.createElement('div');
-            typingDiv.id = id;
-            typingDiv.className = 'message message-ai';
-            typingDiv.innerHTML = '<div class="typing-dot"></div> <div class="typing-dot" style="animation-delay: 0.2s"></div> <div class="typing-dot" style="animation-delay: 0.4s"></div>';
-            container.appendChild(typingDiv);
-            container.scrollTop = container.scrollHeight;
-            return id;
-        }
-
-        function removeTypingIndicator(id) {
-            const el = document.getElementById(id);
-            if (el) el.remove();
-        }
-
-        async function callGeminiAPI(userQuery) {
-            const systemPrompt = "Tu és o assistente de suporte inteligente da Ultimate Models. A Ultimate Models vende assets (modelagens) exclusivos para MTA:SA (Multi Theft Auto). Detalhes importantes: 1. Temos mais de 100 vendas e modelos optimizados (Low Poly e High Poly). 2. Suporte 24/7 via Discord. 3. Links úteis: Discord de encomendas e suporte: https://discord.gg/w9QtbRZCrQ, Discord de serviços entregues: https://discord.gg/Y6YqZhjJ9X. 4. Pagamento via Pix: ultimatemodels0@gmail.com. 5. Política de Reembolso: Não damos reembolso para produtos digitais após o envio, mas corrigimos bugs gratuitamente. 6. Para encomendas personalizadas, o cliente deve abrir um ticket no Discord. Responde de forma curta, amigável e profissional em português de Portugal.";
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-            const payload = { contents: [{ parts: [{ text: userQuery }] }], systemInstruction: { parts: [{ text: systemPrompt }] } };
-            const fetchWithRetry = async (retries = 5, delay = 1000) => {
-                for (let i = 0; i < retries; i++) {
-                    try {
-                        const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-                        if (response.ok) return await response.json();
-                    } catch (e) {}
-                    await new Promise(res => setTimeout(res, delay));
-                    delay *= 2;
-                }
-                throw new Error("API falhou");
-            };
-            const result = await fetchWithRetry();
-            return result.candidates?.[0]?.content?.parts?.[0]?.text || "Não consegui responder agora. Contacta-nos no Discord!";
-        }
-
-        document.getElementById('chatInput').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') sendChatMessage();
-        });
 
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
